@@ -5,17 +5,17 @@ The tests are attempting to use `Flux.combineLatest()` combining a `Mono` and a 
 
 There is currently one workaround if an empty `Flux` can be considered an error, but this might not always be the case.
 
-##Test 1 - Potential Bug
+## Test 1 - Potential Bug
 Use `Flux.combineLatest` with a `Mono` that returns an Error and utilizes `publishOn(Scheduler)` and with an empty `Flux`. Expect the error to be caught by the subscriber but instead `onNext` is called.
 
-##Test 2
+## Test 2
 Use `Flux.combineLatest` with a `Mono` that returns an Error and utilizes `publishOn(Scheduler)` and with an non empty `Flux`. Passes.
 
-##Test 3
+## Test 3
 Use `Flux.combineLatest` with a `Mono` that returns an Error with an empty `Flux`. Passes.
 
-##Test 4
+## Test 4
 Use `Flux.combineLatest` with a `Mono` that returns an Error with an empty `Flux`. Passes.
 
-##Test 5
+## Test 5
 Use `Flux.combineLatest` with a `Mono` that returns an Error and utilizes `publishOn(Scheduler)` and with an empty `Flux` that has a `switchIfEmpty` error. Passes.
